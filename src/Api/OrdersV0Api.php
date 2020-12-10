@@ -37,7 +37,7 @@ use Swagger\Client\ApiException;
 use Swagger\Client\Configuration;
 use Swagger\Client\HeaderSelector;
 use Swagger\Client\ObjectSerializer;
-use Swagger\Client\Signature;
+use Swagger\Client\SignatureSellingPartner;
 /**
  * OrdersV0Api Class Doc Comment
  *
@@ -1700,6 +1700,7 @@ class OrdersV0Api
             try {
                 $response = $this->client->send($request, $options);
             } catch (RequestException $e) {
+                dd($e->getResponse()->getBody()->getContents());
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
                     $e->getCode(),
